@@ -19,6 +19,6 @@ public class WUResponse {
 
     @Override
     public String toString() {
-        return "WUResponse{" + "history='" + history + '\'' + '}';
+        return "[history = "+history+"]";
     }
 }
