@@ -26,15 +26,9 @@ public class Application {
 	private static final String NEW_LINE = "line.separator";
 
 	public static void main(String args[]) throws IOException {
-		// Connect through proxy
-		SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+	
 
-		Proxy proxy= new Proxy(Proxy.Type.HTTP, new InetSocketAddress("squid.eurodyn.com", 8080));
-		requestFactory.setProxy(proxy);
-
-		RestTemplate restTemplate = new RestTemplate(requestFactory);
-
-		//RestTemplate restTemplate = new RestTemplate();
+		RestTemplate restTemplate = new RestTemplate();
 
 		// Get the daily summary of New York city for 2017/10/30.
 		String response = restTemplate.getForObject("http://api.wunderground.com/api/fd1e148f67645411/history_20171030/q/NY/New_York.json", String.class);
